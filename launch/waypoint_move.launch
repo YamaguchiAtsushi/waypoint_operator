@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+
+
+    <node pkg="ypspur_ros" type="ypspur_ros" name="ypspur_ros" respawn="true">
+      <param name="param_file"
+        value="/home/yamaguchi-a/researches/programs/platform/yp-robot-params/robot-params/beego.param" />
+      <param name="port" value="/dev/serial/by-id/usb-T-frog_project_T-frog_Driver-if00" />
+      <param name="cmd_vel_expire" value="5.0" />
+    </node>
+
+  <node name="hokuyo" pkg="hokuyo_node" type="hokuyo_node" respawn="false" output="screen">
+    <param name="calibrate_time" type="bool" value="false"/> 
+    <param name="serial_port" type="string" value="/dev/serial/by-id/usb-T-frog_project_T-frog_Driver-if00"/> 
+    <param name="intensity" type="bool" value="true"/>
+  </node>
+
+    <node pkg="joy" type="joy_node" name="joy_node" output="screen">
+    </node>
+
+    <node name="waypoint_move" pkg="waypoint_operator" type="waypoint_move" output="screen">
+    </node>
+</launch>

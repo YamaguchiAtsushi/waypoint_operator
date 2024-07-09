@@ -124,6 +124,14 @@ include_directories(
 #   src/${PROJECT_NAME}/waypoint_operator.cpp
 # )
 
+add_executable(waypoint_move src/waypoint_move.cpp)
+
+
+target_link_libraries(waypoint_move
+  ${catkin_LIBRARIES}
+)
+
+
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
