@@ -21,7 +21,7 @@ def waypoint_callback(data):
 
 def waypoint_listener():
     rospy.init_node('waypoint_subscriber', anonymous=True)
-    rospy.Subscriber("/move_base_simple/goal", PoseStamped, waypoint_callback)
+    rospy.Subscriber("/robot_parent/move_base_simple/goal", PoseStamped, waypoint_callback)
     rospy.spin()
 
 if __name__ == '__main__':

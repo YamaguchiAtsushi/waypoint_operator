@@ -94,6 +94,9 @@ bool readWaypointsFromCSV(const std::string& csv_file) {
 
         // ベクトルに追加
         waypoints.push_back(waypoint);
+		
+		// デバッグメッセージを追加
+        ROS_INFO("Read waypoint: x=%f, y=%f, z=%f", waypoint.pose.position.x, waypoint.pose.position.y, waypoint.pose.position.z);
     }
 
     file.close();
@@ -209,11 +212,11 @@ int main(int argc, char **argv)
 
     std::string csv_file = "/home/yamaguchi-a/catkin_ws/src/waypoint_operator/waypoints.csv";
 
+
     if (!readWaypointsFromCSV(csv_file)) {
         ROS_ERROR("Failed to read waypoints from CSV file.");
         return 1;
     }
-
     std::cout << "program start!! " << std::endl;
 
     int i = 0;
