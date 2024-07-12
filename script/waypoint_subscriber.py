@@ -5,7 +5,7 @@ from geometry_msgs.msg import PoseStamped
 import csv
 
 # CSVファイルの初期化
-csv_file = 'waypoints.csv'
+csv_file = '/home/ubuntu/catkin_ws/src/waypoint_operator/csv/waypoints.csv'
 with open(csv_file, 'w', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(["x", "y", "z"])

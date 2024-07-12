@@ -211,7 +211,7 @@ int main(int argc, char **argv)
 	robot_r.z = 0.0;
 	robot_r.w = 1.0;
 
-    std::string csv_file = "/home/yamaguchi-a/catkin_ws/src/waypoint_operator/waypoints.csv";
+    std::string csv_file = "/home/ubuntu/catkin_ws/src/waypoint_operator/csv/waypoints.csv";
 
 
     if (!readWaypointsFromCSV(csv_file)) {
