@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+
+    <node pkg="ypspur_ros" type="ypspur_ros" name="ypspur_ros" respawn="true">
+      <param name="param_file"
+        value="/home/yamaguchi-a/researches/programs/platform/yp-robot-params/robot-params/beego.param" />
+      <param name="port" value="/dev/serial/by-id/usb-T-frog_project_T-frog_Driver-if00" />
+      <param name="cmd_vel_expire" value="5.0" />
+    </node>
+
+
+</launch>
